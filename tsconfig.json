@@ -9,6 +9,10 @@
       "@/*": ["./*"]
     },
     "outDir": ".output",
-     "moduleResolution": "node16"
+     "module": "ESNext",  // Use "ESNext" for ESM modules
+     "target": "ESNext",
+     "moduleResolution": "Node",
+     "esModuleInterop": true,
+     "skipLibCheck": true
   }
 }
