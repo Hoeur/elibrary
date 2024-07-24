@@ -13,7 +13,7 @@ const load_more = ref<boolean>(false);
 const panding = ref<any>(false);
 const query = ref<any>({
   page: 1,
-  limit: 1,
+  limit: 50,
 });
 
 let qry = `&page=${query.value.page}&limit=${query.value.limit}`;
@@ -41,7 +41,7 @@ const handleScroll = async () => {
   const container: any = scrollContainer.value;
   query.value = {
     page: doc.page + 1,
-    limit: 1,
+    limit: 50,
   };
   let new_qry = `&page=${query.value.page}&limit=${doc.limit}`;
   const bottomOffset =
