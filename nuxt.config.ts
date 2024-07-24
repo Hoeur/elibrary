@@ -99,14 +99,11 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxt/image',
-    '@nuxtjs/robots',
-    '@nuxt/content',
     '@nuxtjs/sitemap',
     'nuxt-aos',
     '@vesp/nuxt-fontawesome',
     '@pinia/nuxt',
-    "@nuxtjs/tailwindcss"
-  ],
+    "@nuxtjs/tailwindcss", "@nuxtjs/robots", "@nuxtjs/sitemap", '@pinia-plugin-persistedstate/nuxt'],
   fontawesome: {
     icons: {
       solid: ['cog'],
@@ -141,7 +138,7 @@ export default defineNuxtConfig({
     duration: 300, // values from 0 to 3000, with step 50ms
     easing: 'ease', // default easing for AOS animations
     once: false, // whether animation should happen only once - while scrolling down
-    mirror: false, // whether elements should animate out while scrolling past them
+    mirror: false, // whether elements should animate out while scrolling ast them
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   },
 });
