@@ -48,7 +48,7 @@ export default defineNuxtConfig({
   robots: {
     UserAgent: '*',
     Allow: '/',
-    Sitemap: process.env.NUXT_PUBLIC_SITE_URL+'sitemap.xml'
+    Sitemap: `${process.env.NUXT_PUBLIC_SITE_URL}'/sitemap.xml'`
   },
   // sitemap: {
   //   siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
@@ -72,7 +72,7 @@ export default defineNuxtConfig({
       webBaseUrl: process.env.NUXT_PUBLIC_SITE_URL || '/',
     },
   },
-  plugins: ['~/plugins/api.ts', '~/plugins/auto-animate.ts','~/plugins/fontawesome.ts'],
+  plugins: ['~/plugins/api.ts', '~/plugins/auto-animate.ts', '~/plugins/fontawesome.ts'],
   modules: [
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
