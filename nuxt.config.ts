@@ -40,19 +40,19 @@ export default defineNuxtConfig({
     vercel: {
       regions: ['iad1'],
     },
-    prerender: {
-      crawlLinks: true,
-      routes: ['/', 'sitemap.xml'],
-    },
+    // prerender: {
+    //   crawlLinks: true,
+    //   routes: ['/', 'sitemap.xml'],
+    // },
   },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
   },
-  robots: {
-    UserAgent: '*',
-    Allow: '/',
-    Sitemap: `${process.env.NUXT_PUBLIC_SITE_URL}'/sitemap.xml'`
-  },
+  // robots: {
+  //   UserAgent: '*',
+  //   Allow: '/',
+  //   Sitemap: `${process.env.NUXT_PUBLIC_SITE_URL}'/sitemap.xml'`
+  // },
   // sitemap: {
   //   siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
   //   routes: async () => {
