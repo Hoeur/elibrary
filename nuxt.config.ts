@@ -36,15 +36,33 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    preset: 'vercel-edge',
-    vercel: {
-      regions: ['iad1'],
+    preset: 'static',
+    static: true,
+    target: 'static',
+    ssr: true,
+    generate: {
+      fallback: 'index.html'
     },
+    // Amplify specific settings
+    amplify: {
+      // Amplify specific configurations can be added here
+    },
+    // Uncomment and adjust if you want to use prerendering
     // prerender: {
     //   crawlLinks: true,
-    //   routes: ['/', 'sitemap.xml'],
+    //   routes: ['/', '/sitemap.xml'],
     // },
   },
+  // nitro: {
+  //   preset: 'static',
+  //   vercel: {
+  //     regions: ['iad1'],
+  //   },
+  //   // prerender: {
+  //   //   crawlLinks: true,
+  //   //   routes: ['/', 'sitemap.xml'],
+  //   // },
+  // },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
   },
@@ -77,14 +95,14 @@ export default defineNuxtConfig({
   },
   plugins: ['~/plugins/api.ts', '~/plugins/auto-animate.ts', '~/plugins/fontawesome.ts'],
   modules: [
-    '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
     '@nuxtjs/robots',
     '@nuxt/content',
     '@nuxtjs/sitemap',
     'nuxt-aos',
-    '@vesp/nuxt-fontawesome'
+    '@vesp/nuxt-fontawesome',
+    '@pinia/nuxt'
   ],
   fontawesome: {
     icons: {
