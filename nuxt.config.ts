@@ -50,6 +50,9 @@ export default defineNuxtConfig({
     Allow: '/',
     Sitemap: process.env.NUXT_PUBLIC_SITE_URL+'sitemap.xml'
   },
+  build: {
+    outDir: '.output/'
+  },
   // sitemap: {
   //   siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
   //   routes: async () => {
