@@ -36,7 +36,10 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
-    preset: 'static',
+    preset: 'vercel-edge',
+    vercel: {
+      regions: ['iad1'],
+    },
     prerender: {
       crawlLinks: true,
       routes: ['/', 'sitemap.xml'],
