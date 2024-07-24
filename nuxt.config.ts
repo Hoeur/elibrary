@@ -99,10 +99,12 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxt/image',
-    'nuxt-aos',
-    // '@vesp/nuxt-fontawesome',
+    '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
-    "@nuxtjs/tailwindcss"],
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
+    'nuxt-aos'
+  ], 
   fontawesome: {
     icons: {
       solid: ['cog'],
