@@ -8,13 +8,6 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "outDir": "./dist",
-    "incremental": true,
-    "skipLibCheck": true
+    "outDir": ".output",
   }
 }
