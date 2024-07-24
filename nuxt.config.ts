@@ -102,7 +102,7 @@ export default defineNuxtConfig({
     'nuxt-aos',
     // '@vesp/nuxt-fontawesome',
     '@pinia/nuxt',
-    "@nuxtjs/tailwindcss", "@nuxtjs/robots", "@nuxtjs/sitemap"],
+    "@nuxtjs/tailwindcss"],
   fontawesome: {
     icons: {
       solid: ['cog'],
