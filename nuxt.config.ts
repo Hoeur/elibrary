@@ -99,7 +99,6 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxt/image',
-    '@nuxtjs/sitemap',
     'nuxt-aos',
     '@vesp/nuxt-fontawesome',
     '@pinia/nuxt',
