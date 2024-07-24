@@ -80,12 +80,12 @@ export default defineNuxtConfig({
   //   },
   // },
   css: ['~/assets/css/main.css'],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
+  // postcss: {
+  //   plugins: {
+  //     tailwindcss: {},
+  //     autoprefixer: {},
+  //   },
+  // },
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.API_URL,
@@ -98,7 +98,6 @@ export default defineNuxtConfig({
     '~/plugins/fontawesome.ts',
   ],
   modules: [
-    '@nuxtjs/tailwindcss',
     '@nuxt/image',
     '@nuxtjs/robots',
     '@nuxt/content',
@@ -106,6 +105,7 @@ export default defineNuxtConfig({
     'nuxt-aos',
     '@vesp/nuxt-fontawesome',
     '@pinia/nuxt',
+    "@nuxtjs/tailwindcss"
   ],
   fontawesome: {
     icons: {
