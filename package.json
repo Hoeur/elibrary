@@ -27,7 +27,8 @@
     "typescript": "^5.5.4",
     "vue-pdf": "^4.3.0",
     "vue-pdf-app": "^2.1.0",
-    "nuxt-aos": "^1.2.5"
+    "nuxt-aos": "^1.2.5",
+    "pinia": "^2.1.7"
   },
   "devDependencies": {
     "@nuxt/types": "^2.18.1",
