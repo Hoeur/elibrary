@@ -35,23 +35,23 @@ export default defineNuxtConfig({
       ],
     },
   },
-  nitro: {
-    preset: 'static',
-    static: true,
-    ssr: true,
-    generate: {
-      fallback: 'index.html',
-    },
-    // Amplify specific settings
-    amplify: {
-      // Amplify specific configurations can be added here
-    },
-    // Uncomment and adjust if you want to use prerendering
-    // prerender: {
-    //   crawlLinks: true,
-    //   routes: ['/', '/sitemap.xml'],
-    // },
-  },
+  // nitro: {
+  //   preset: 'static',
+  //   static: true,
+  //   ssr: true,
+  //   generate: {
+  //     fallback: 'index.html',
+  //   },
+  //   // Amplify specific settings
+  //   amplify: {
+  //     // Amplify specific configurations can be added here
+  //   },
+  //   // Uncomment and adjust if you want to use prerendering
+  //   // prerender: {
+  //   //   crawlLinks: true,
+  //   //   routes: ['/', '/sitemap.xml'],
+  //   // },
+  // },
   // nitro: {
   //   preset: 'static',
   //   vercel: {
