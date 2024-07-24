@@ -100,7 +100,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     'nuxt-aos',
-    '@vesp/nuxt-fontawesome',
+    // '@vesp/nuxt-fontawesome',
     '@pinia/nuxt',
     "@nuxtjs/tailwindcss", "@nuxtjs/robots", "@nuxtjs/sitemap", '@pinia-plugin-persistedstate/nuxt'],
   fontawesome: {
