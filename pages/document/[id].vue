@@ -97,12 +97,12 @@ const toggleFolder = (folder: any): any => {
 };
 
 /**
- * 
+ *
  * @param id event open download modal
  */
-const toggleDownload = (id:number) => {
+const toggleDownload = (id: number) => {
   const downloadModal = document.getElementById(
-    'download_modal'+id
+    'download_modal' + id
   ) as HTMLDialogElement | null;
   downloadModal && downloadModal.showModal();
 };

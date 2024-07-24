@@ -38,10 +38,9 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     static: true,
-    target: 'static',
     ssr: true,
     generate: {
-      fallback: 'index.html'
+      fallback: 'index.html',
     },
     // Amplify specific settings
     amplify: {
@@ -93,7 +92,11 @@ export default defineNuxtConfig({
       webBaseUrl: process.env.NUXT_PUBLIC_SITE_URL || '/',
     },
   },
-  plugins: ['~/plugins/api.ts', '~/plugins/auto-animate.ts', '~/plugins/fontawesome.ts'],
+  plugins: [
+    '~/plugins/api.ts',
+    '~/plugins/auto-animate.ts',
+    '~/plugins/fontawesome.ts',
+  ],
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
@@ -102,12 +105,12 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     'nuxt-aos',
     '@vesp/nuxt-fontawesome',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
   ],
   fontawesome: {
     icons: {
       solid: ['cog'],
-    }
+    },
   },
 
   imports: {
@@ -132,7 +135,6 @@ export default defineNuxtConfig({
     debounceDelay: 30, // the delay on debounce used while resizing window (advanced)
     throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
-
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
     offset: 120, // offset (in px) from the original trigger point
     delay: 0, // values from 0 to 3000, with step 50ms
@@ -141,5 +143,5 @@ export default defineNuxtConfig({
     once: false, // whether animation should happen only once - while scrolling down
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-  }
+  },
 });

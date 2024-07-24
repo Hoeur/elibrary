@@ -14,7 +14,7 @@
             class="drawer-button btn btn-sm btn-circle btn-ghost text-lg absolute right-4 top-4"
             htmlFor="sidebar_drawer"
           >
-          ✕</label
+            ✕</label
           >
           <NuxtLink :to="{ path: '/', force: true }" class="w-full my-2"
             ><div class="flex flex-col items-center gap-3">

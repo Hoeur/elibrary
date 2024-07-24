@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{
-    handleChangeType: () => void;
-    url: string;
+  handleChangeType: () => void;
+  url: string;
 }>();
 </script>
 <template>

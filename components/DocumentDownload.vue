@@ -1,9 +1,9 @@
 import { type } from '../.nuxt/types/imports';
 <script setup lang="ts">
-const props:any = defineProps({
+const props: any = defineProps({
   id: String,
   title: String,
-})
+});
 const route = useRoute();
 const message = ref<string | any>('');
 const loading = ref<boolean>(false);
@@ -25,16 +25,17 @@ const handleDownload = async (type: 'word' | 'pdf') => {
     }
 
     const { data, error } = await useFetch<Blob>(downloadUrl, {
-      method: 'GET'
+      method: 'GET',
     });
 
     if (error.value) {
-      throw message.value = error.value.message; // Store the error message
+      throw (message.value = error.value.message); // Store the error message
     } else if (data.value) {
       const url = URL.createObjectURL(data.value);
       const a = document.createElement('a');
       a.href = url;
-      a.download = type === 'word' ? `${props.title}.docx` : `${props.title}.pdf`; // Set file name
+      a.download =
+        type === 'word' ? `${props.title}.docx` : `${props.title}.pdf`; // Set file name
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -46,11 +47,10 @@ const handleDownload = async (type: 'word' | 'pdf') => {
     loading.value = false;
   }
 };
-
 </script>
 
 <template>
-  <dialog :id="'download_modal'+props.id" class="modal">
+  <dialog :id="'download_modal' + props.id" class="modal">
     <div class="modal-box bg-zinc-50 rounded-sm">
       <form method="dialog">
         <button
@@ -79,7 +79,7 @@ const handleDownload = async (type: 'word' | 'pdf') => {
       </div>
     </div>
     <form method="dialog" class="modal-backdrop">
-    <button>close</button>
-  </form>
+      <button>close</button>
+    </form>
   </dialog>
 </template>

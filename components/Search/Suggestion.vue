@@ -12,7 +12,7 @@ const props = defineProps<{
         :key="idx"
         class="search_suggestion_item"
       >
-        <NuxtLink :to="'/document/'+item.id">
+        <NuxtLink :to="'/document/' + item.id">
           <div
             class="font-bold text-lg"
             v-html="props.highlightText(item.name, item.words)"

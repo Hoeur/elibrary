@@ -12,7 +12,7 @@ const state = ref<state>({
 });
 
 export default function useSearch() {
-  const append = (key: keyof state, value: any):any => {
+  const append = (key: keyof state, value: any): any => {
     if (key in state.value) {
       state.value[key] = value;
     }

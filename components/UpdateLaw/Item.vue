@@ -7,9 +7,9 @@ const props = defineProps<{
   item: ItemType;
 }>();
 
-const toggleDownload = (id:number) => {
+const toggleDownload = (id: number) => {
   const downloadModal = document.getElementById(
-    'download_modal'+id
+    'download_modal' + id
   ) as HTMLDialogElement | null;
   downloadModal && downloadModal.showModal();
 };
@@ -79,5 +79,5 @@ const toggleDownload = (id:number) => {
     </div>
   </div>
 
-  <DocumentDownload :id="props.item.id" :title="props.item.name"/>
+  <DocumentDownload :id="props.item.id" :title="props.item.name" />
 </template>

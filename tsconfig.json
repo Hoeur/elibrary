@@ -2,12 +2,7 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "allowJs": true,
-    "types": [
-      "vite/client",
-      "@nuxt/types",
-      "@nuxt/nitro",
-      "@types/node"
-    ],
+    "types": ["vite/client", "@nuxt/types", "@nuxt/nitro", "@types/node"],
     "baseUrl": "./",
     "paths": {
       "~/*": ["./*"],
@@ -16,20 +11,6 @@
     "outDir": ".output",
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "isolatedModules": true,
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "experimentalDecorators": true
-  },
-  "exclude": [
-    "node_modules",
-    ".output",
-    "dist"
-  ]
+    "moduleResolution": "Node"
+  }
 }

@@ -10,9 +10,9 @@ useServerSeoMeta({
 
 const message = ref('');
 const lated_update_date = ref<any>('');
-const { data, error,pending } = await useFetch('/api/last_update');
+const { data, error, pending } = await useFetch('/api/last_update');
 if (error.value) {
-  throw message.value = error.value.message; // Store the error message
+  throw (message.value = error.value.message); // Store the error message
 } else if (data.value) {
   lated_update_date.value = (data as any).value.data.last_update;
 }

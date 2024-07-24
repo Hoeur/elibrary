@@ -1,14 +1,15 @@
 import { getDateFormat } from '../../services/index';
 <script setup lang="ts">
-import {getDateFormat} from '../../services/index'
-const props:any = defineProps<{
-  heading: string[];
+import { getDateFormat } from '../../services/index';
+const props: any = defineProps<{
+  heading: any[];
   handleChangeType: () => any;
   pending: boolean;
   toggleFolder: () => any;
   parentChange: () => any;
-  item:any;
+  item: any;
 }>();
+const fragment = ref<any>('#');
 </script>
 
 <template>
@@ -327,7 +328,11 @@ const props:any = defineProps<{
           </span>
           <div class="mt-2 font-bold text-sky-500">កាលបរិច្ឆេទបង្ហោះ :</div>
           <span class="text-slate-700">
-            {{ props.item.date ? formatDateToKhmer(props.item.date || 123456789) : '' }}
+            {{
+              props.item.date
+                ? formatDateToKhmer(props.item.date || 123456789)
+                : ''
+            }}
           </span>
         </div>
       </div>
@@ -340,8 +345,7 @@ const props:any = defineProps<{
         v-auto-animate
         @click="props.handleChangeType"
       />
-      <div role="tabpanel" class="tab-content pt-4 __details p-2">
-      </div>
+      <div role="tabpanel" class="tab-content pt-4 __details p-2"></div>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import SearchList from "../../components/UpdateLaw/SearchList.vue"
-import {useDoc} from '../../store/document/index';
+import SearchList from '../../components/UpdateLaw/SearchList.vue';
+import { useDoc } from '../../store/document/index';
 
 const doc = useDoc();
 useSeoMeta({

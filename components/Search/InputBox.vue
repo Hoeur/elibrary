@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // import { useDocumentStore } from '~/store';
 import { filterObjectWithTruthyValues } from '~/utils';
-import {useDoc} from '../../store/document/index';
+import { useDoc } from '../../store/document/index';
 
 // const store = useDocumentStore();
 const router = useRouter();
@@ -9,7 +9,7 @@ const search = useSearch();
 const doc = useDoc();
 
 const show = ref(false);
-  const message = ref<string | any>('');
+const message = ref<string | any>('');
 const load_more = ref<boolean>(false);
 const query = ref<any>(null);
 const handleSearchFocus = () => {
@@ -19,20 +19,25 @@ const handleSearchFocus = () => {
 const onChange = (event: InputEvent) => {
   const { value } = event.target as HTMLInputElement;
   search.append('search', value);
-
 };
-let qry = `&page=${doc.page}&limit=${doc.limit}`
+let qry = `&page=${doc.page}&limit=${doc.limit}`;
 const onSubmit = async () => {
   const { data, status, error, pending } = await useFetch<any>(
-    '/api/search?q=' + search.params.value.search + "&type=" + search.params.value.type + "&categories=" + search.params.value.categories + qry
+    '/api/search?q=' +
+      search.params.value.search +
+      '&type=' +
+      search.params.value.type +
+      '&categories=' +
+      search.params.value.categories +
+      qry
   );
   if (error.value) {
     throw (message.value = error.value);
   }
-  items.value = (data as any).value.data
-  doc.items = (data as any).value.data
-  doc.total = (data as any).value.total
-  doc.page = 1
+  items.value = (data as any).value.data;
+  doc.items = (data as any).value.data;
+  doc.total = (data as any).value.total;
+  doc.page = 1;
   router.push({
     path: '/result',
     query: filterObjectWithTruthyValues(search.params.value),
@@ -42,18 +47,27 @@ const onSubmit = async () => {
 };
 
 const items = ref<Document[]>([]);
-watch([search.params.value], debounce(async() => {  
-  const { data, status, error, pending } = await useFetch<any>(
-    '/api/search?q=' + search.params.value.search + "&type=" + search.params.value.type + "&categories=" + search.params.value.categories + qry
-  );
-  if (error.value) {
-    throw (message.value = error.value);
-  }
-  items.value = (data as any).value.data
-  doc.items = (data as any).value.data
-  doc.total = (data as any).value.total
-  doc.page = 1
-}, 500));
+watch(
+  [search.params.value],
+  debounce(async () => {
+    const { data, status, error, pending } = await useFetch<any>(
+      '/api/search?q=' +
+        search.params.value.search +
+        '&type=' +
+        search.params.value.type +
+        '&categories=' +
+        search.params.value.categories +
+        qry
+    );
+    if (error.value) {
+      throw (message.value = error.value);
+    }
+    items.value = (data as any).value.data;
+    doc.items = (data as any).value.data;
+    doc.total = (data as any).value.total;
+    doc.page = 1;
+  }, 500)
+);
 
 const highlightText = (text: string, words: string[]) => {
   if (!words || words.length === 0) return text;
@@ -80,7 +94,7 @@ const highlightText = (text: string, words: string[]) => {
           @focus="handleSearchFocus"
           @focusout="handleSearchFocus"
         />
-        <SearchSuggestion :items="items" :highlightText="highlightText"/>
+        <SearchSuggestion :items="items" :highlightText="highlightText" />
       </div>
       <button
         id="search"
@@ -109,7 +123,7 @@ const highlightText = (text: string, words: string[]) => {
 </template>
 
 <style>
-.highlight{
+.highlight {
   color: blue;
 }
 </style>

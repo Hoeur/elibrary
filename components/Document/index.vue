@@ -79,7 +79,7 @@ const toggleFolder = (folder: any) => {
   folder.state.opened = !folder.state.opened;
 };
 onMounted(() => {
-  watchEffect(() => applyStyle(store.document?.css))
+  watchEffect(() => applyStyle(store.document?.css));
 });
 </script>
 

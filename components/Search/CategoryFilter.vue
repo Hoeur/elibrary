@@ -2,14 +2,13 @@
 const router = useRouter();
 const { path } = useRoute();
 const search = useSearch();
-const message = ref<string | any>("");
+const message = ref<string | any>('');
 
 const { data, status, error, pending } = await useFetch<any>('/api/categories');
 if (error.value) {
-  throw message.value = error.value
+  throw (message.value = error.value);
 }
-const items = ref<any[]>((data as any)?.value.data)
-
+const items = ref<any[]>((data as any)?.value.data);
 
 const selectedItems = computed(
   () => search.params.value.categories?.split(',') || []
@@ -62,13 +61,19 @@ const onChange = (event: Event) => {
       <template v-if="pending">
         <SearchCategorySkeleton v-for="item in items" :key="item.id" />
       </template>
-      <template v-else-if="
-        items.length && !pending && items.length > 0
-      ">
-        <label class="inline-flex items-center cursor-pointer" v-for="item in items" :key="item.id">
-          <input type="checkbox"
+      <template v-else-if="items.length && !pending && items.length > 0">
+        <label
+          class="inline-flex items-center cursor-pointer"
+          v-for="item in items"
+          :key="item.id"
+        >
+          <input
+            type="checkbox"
             class="checkbox large-screen rounded-sm checkbox-info ![--chkbg:#E5EBF5] ![--chkfg:#0EA5E9] !border-[#0EA5E9]"
-            :value="item.id" v-model="item.checked" @change="onChange" />
+            :value="item.id"
+            v-model="item.checked"
+            @change="onChange"
+          />
           <span class="ml-2 text-gray-700 checkmark">{{ item.name }}</span>
         </label>
       </template>
@@ -79,10 +84,18 @@ const onChange = (event: Event) => {
         <div class="h-[26px] w-[115px] custom_skeleton" />
       </template>
       <template v-else-if="items.length">
-        <button class="search_select_deselect_btn" :disabled="isSelectAll" @click="handleSelectAll(true)">
+        <button
+          class="search_select_deselect_btn"
+          :disabled="isSelectAll"
+          @click="handleSelectAll(true)"
+        >
           ជ្រើសរើសទាំងអស់
         </button>
-        <button class="search_select_deselect_btn" :disabled="isDeselectAll" @click="handleSelectAll(false)">
+        <button
+          class="search_select_deselect_btn"
+          :disabled="isDeselectAll"
+          @click="handleSelectAll(false)"
+        >
           ដកការជ្រើសរើស
         </button>
       </template>
