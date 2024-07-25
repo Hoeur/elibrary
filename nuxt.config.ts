@@ -36,14 +36,15 @@ export default defineNuxtConfig({
       ],
     },
   },
-  // nitro: {
-  //   preset: 'static',
-  //   static: true,
-  //   prerender: {
-  //     crawlLinks: true,
-  //     routes: ['/', 'sitemap.xml'],
-  //   },
-  // },
+  nitro: {
+    preset: 'node-server',
+    static: true,
+    ssr:true,
+    prerender: {
+      crawlLinks: true,
+      routes: ['/', 'sitemap.xml'],
+    },
+  },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
   },
