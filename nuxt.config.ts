@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config';
 export default defineNuxtConfig({
+  ssr: true, // Enable server-side rendering
   devtools: { enabled: process.env.NODE_ENV === 'development' },
   app: {
     head: {
@@ -35,14 +36,14 @@ export default defineNuxtConfig({
       ],
     },
   },
-  nitro: {
-    preset: 'static',
-    static: true,
-    prerender: {
-      crawlLinks: true,
-      routes: ['/', 'sitemap.xml'],
-    },
-  },
+  // nitro: {
+  //   preset: 'static',
+  //   static: true,
+  //   prerender: {
+  //     crawlLinks: true,
+  //     routes: ['/', 'sitemap.xml'],
+  //   },
+  // },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
   },
@@ -76,13 +77,7 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     'nuxt-aos'
-  ], 
-  fontawesome: {
-    icons: {
-      solid: ['cog'],
-    },
-  },
-
+  ],
   imports: {
     dirs: ['store'],
   },
