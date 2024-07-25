@@ -52,40 +52,42 @@ export default defineNuxtConfig({
   //   //   routes: ['/', '/sitemap.xml'],
   //   // },
   // },
-  // nitro: {
-  //   preset: 'static',
-  //   vercel: {
-  //     regions: ['iad1'],
-  //   },
-  //   // prerender: {
-  //   //   crawlLinks: true,
-  //   //   routes: ['/', 'sitemap.xml'],
-  //   // },
-  // },
+  nitro: {
+    preset: 'static',
+    static: true,
+    ssr: true,
+    generate: {
+      fallback: 'index.html',
+    },
+    prerender: {
+      crawlLinks: true,
+      routes: ['/', 'sitemap.xml'],
+    },
+  },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
   },
-  // robots: {
-  //   UserAgent: '*',
-  //   Allow: '/',
-  //   Sitemap: `${process.env.NUXT_PUBLIC_SITE_URL}'/sitemap.xml'`
-  // },
-  // sitemap: {
-  //   siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
-  //   routes: async () => {
-  //     const routes = [];
-  //       routes.push(process.env.API_URL+`/api/search?q=&type='all'&categories=&page=${1}&limit=${400}`);
+  robots: {
+    UserAgent: '*',
+    Allow: '/',
+    Sitemap: `${process.env.NUXT_PUBLIC_SITE_URL}'/sitemap.xml'`
+  },
+  sitemap: {
+    siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
+    routes: async () => {
+      const routes = [];
+        routes.push(process.env.API_URL+`/api/search?q=&type='all'&categories=&page=${1}&limit=${400}`);
 
-  //     return routes;
-  //   },
-  // },
+      return routes;
+    },
+  },
   css: ['~/assets/css/main.css'],
-  // postcss: {
-  //   plugins: {
-  //     tailwindcss: {},
-  //     autoprefixer: {},
-  //   },
-  // },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.API_URL,
