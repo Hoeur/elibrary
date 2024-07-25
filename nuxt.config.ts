@@ -35,14 +35,14 @@ export default defineNuxtConfig({
       ],
     },
   },
-  // nitro: {
-  //   preset: 'static',
-  //   static: true,
-  //   prerender: {
-  //     crawlLinks: true,
-  //     routes: ['/', 'sitemap.xml'],
-  //   },
-  // },
+  nitro: {
+    preset: 'static',
+    static: true,
+    prerender: {
+      crawlLinks: true,
+      routes: ['/', 'sitemap.xml'],
+    },
+  },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
   },
@@ -50,15 +50,6 @@ export default defineNuxtConfig({
     UserAgent: '*',
     Allow: '/',
     Sitemap: `${process.env.NUXT_PUBLIC_SITE_URL}'/sitemap.xml'`
-  },
-  sitemap: {
-    siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
-    routes: async () => {
-      const routes = [];
-        routes.push(process.env.API_URL+`/api/search?q=&type='all'&categories=&page=${1}&limit=${400}`);
-
-      return routes;
-    },
   },
   css: ['~/assets/css/main.css'],
   postcss: {
