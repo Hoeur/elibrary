@@ -55,10 +55,6 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     static: true,
-    ssr: true,
-    generate: {
-      fallback: 'index.html',
-    },
     prerender: {
       crawlLinks: true,
       routes: ['/', 'sitemap.xml'],

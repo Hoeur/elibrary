@@ -3,11 +3,11 @@
   Data
 */
 import type { Document, MetaData } from '~/base/interfaces/ApiData';
-import Loading from './components/loading.vue';
-import Breadcrumb from './components/breadcrumb.vue';
-import Sidebar from './components/sidebar/sidebar.vue';
-import Content from './components/contents/content.vue';
-import Pdf from './components/pdf/index.vue';
+import Loading from '../../components/Document/components/loading.vue';
+import Breadcrumb from '../../components/Document/components/breadcrumb.vue';
+import Sidebar from '../../components/Document/components/sidebar/sidebar.vue';
+import Content from '../../components/Document/components/contents/content.vue';
+import Pdf from '../../components/Document/components/pdf/index.vue';
 const route = useRoute();
 const fragment = '#';
 const message = ref<string | any>('');
